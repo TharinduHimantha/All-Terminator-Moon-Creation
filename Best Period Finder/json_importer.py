@@ -1,0 +1,14 @@
+import json
+
+# Load your JSON file
+with open("mooninfo_2025.json", "r") as f:
+    data = json.load(f)
+
+# Extract records 4344 to 5062 (inclusive)
+subset = data[4343:5063]  
+
+# Save to a new file
+with open("image_set_metadata.json", "w") as f:
+    json.dump(subset, f, indent=4)
+
+print(f"Saved {len(subset)} records.")
